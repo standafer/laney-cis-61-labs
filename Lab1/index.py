@@ -32,7 +32,7 @@ def sum_naturals(n):
 	"""
 	return int(( n * (n + 1) ) / 2)
 
-# Question 5
+# Question 5-1
 def area_of_rectangle(x, y):
 	"""
 	>>> area_of_rectangle(1, 1)
@@ -44,4 +44,5 @@ def area_of_rectangle(x, y):
 	"""
 	return x * y
 
+# Question 5-2
 area_of_rectangle_lam = lambda x, y: x * y
