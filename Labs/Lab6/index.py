@@ -177,3 +177,53 @@ def double_tree(t):
     """
 
     return tree(label(t)*2, [ double_tree(branch) for branch in branches(t) ])
+
+# (Optional) Q6: Add trees
+def add_trees(tree_stack):
+    """
+    >>> numbers = tree(1,
+    ...                [tree(2,
+    ...                      [tree(3),
+    ...                       tree(4)]),
+    ...                 tree(5,
+    ...                      [tree(6,
+    ...                            [tree(7)]),
+    ...                       tree(8)])])
+    >>> print_tree(add_trees([numbers, numbers]))
+    2
+      4
+        6
+        8
+      10
+        12
+          14
+        16
+    >>> print_tree(add_trees([tree(2), tree(3, [tree(4), tree(5)])]))
+    5
+      4
+      5
+    >>> print_tree(add_trees([tree(2, [tree(3)]), tree(2, [tree(3), tree(4)])]))
+    4
+      6
+      4
+    >>> print_tree(add_trees([tree(2, [tree(3, [tree(4), tree(5)])]), \
+    tree(2, [tree(3, [tree(4)]), tree(5)])]))
+    4
+      6
+        8
+        5
+      5
+    """
+
+    max_length = max([ len(t) for t in tree_stack ])
+    all_branches = [ branches(t) for t in tree_stack ]
+    
+    new_label = sum([ label(el) for el in tree_stack if el ])
+    new_branches = []
+    
+    for i in range(max_length):
+        branches_at_i = [branches[i] for branches in all_branches if i < len(branches)]
+        if branches_at_i:
+            new_branches.append(add_trees(branches_at_i))
+    
+    return tree(new_label, new_branches)
