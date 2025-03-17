@@ -223,6 +223,7 @@ def add_trees(tree_stack):
     
     for i in range(max_length):
         branches_at_i = [branches[i] for branches in all_branches if i < len(branches)]
+
         if branches_at_i:
             new_branches.append(add_trees(branches_at_i))
     

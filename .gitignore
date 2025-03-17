@@ -1,0 +1,13 @@
+Projects/twitter/data/all_tweets.txt
+Projects/twitter/data/my_life.txt
+Projects/twitter/data/obama.txt
+Projects/twitter/data/party.txt
+Projects/twitter/data/sandwich.txt
+Projects/twitter/data/sentiments.csv
+Projects/twitter/data/soup.txt
+Projects/twitter/data/texas.txt
+
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
