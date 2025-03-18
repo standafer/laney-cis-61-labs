@@ -112,7 +112,6 @@ def extract_words(text):
     >>> extract_words('@(cat$.on^#$my&@keyboard***@#*')
     ['cat', 'on', 'my', 'keyboard']
     """
-    "*** YOUR CODE HERE ***"
     
     words = []
     buffer = ""
